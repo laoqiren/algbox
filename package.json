@@ -1,6 +1,6 @@
 {
   "name": "algbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "algorithms tool box powered by typescript",
   "main": "index.js",
   "scripts": {
