@@ -1,0 +1,34 @@
+{
+  "name": "algbox",
+  "version": "1.0.0",
+  "description": "algorithms tool box powered by typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "gulp copyFiles && tsc",
+    "test": "mocha --recursive",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [
+    "algorithms",
+    "javascript",
+    "typescript"
+  ],
+  "author": "laoqiren",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.3.4",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^5.0.0-alpha.2",
+    "mlhelper": "^0.1.10",
+    "mocha": "^5.2.0"
+  }
+}
