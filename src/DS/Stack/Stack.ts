@@ -10,8 +10,7 @@ class Stack {
         return this;
     }
     pop(): Stack {
-        this.list.deleteTail();
-        return this;
+        return this.list.deleteTail();
     }
     size(): number {
         return this.list.getLength();

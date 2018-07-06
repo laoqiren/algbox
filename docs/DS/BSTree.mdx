@@ -1,0 +1,118 @@
+---
+name: BSTree
+route: /ds/bstree
+menu: Data Structure
+order: 6
+---
+
+import { Playground, PropsTable } from 'docz'
+import BSTree from '../components/BSTree'
+
+
+# **BSTree**
+
+引入二叉查找树类
+
+```js
+const BSTree = require('algbox/lib/DS').BSTree;
+```
+## **构建一棵二叉查找树**
+```js
+const tree = new BSTree(treeObj);
+```
+* **treeObj** \[TreeNode | null | undefined\]
+* `TreeNode`:
+```js
+TreeNode {
+    value: any;
+    left?: TreeNode | null;
+    right?: TreeNode | null;
+    parent?: TreeNode | null;
+}
+```
+
+## **继承自`BinaryTree`类**
+继承所有`BinaryTree`类具有的方法
+
+### **遍历**
+```js
+console.log([...tree.preOrder()]); //前序
+console.log([...tree.middleOrder()]); //中序
+console.log([...tree.postOrder()]); //后序
+console.log([...tree.levelOrder()]); // 层次
+```
+
+## **查找节点**
+```js
+const node = tree.search(value);
+```
+* **value** \<number\>
+* **return** \<TreeNode | null\> 
+
+## **插入节点**
+```js
+const node = tree.insert(value);
+```
+* **value** \<number\>
+* **return** \<boolean\>  是否插入成功
+
+## **删除节点**
+```js
+const node = tree.remove(value);
+```
+* **value** \<number\>
+* **return** \<boolean\>  是否插入成功
+
+## **静态方法**
+
+### `BSTree.isBSTree(obj)`
+* **obj** \<TreeNode\>
+* **return** \<boolean\>  是否为二叉查找树结构
+
+### `BSTree.tree_successor(treeNode)`
+* **treeNode** \<BSTree\>
+* **return** \<TreeNode\>  返回指定节点的直接后继节点
+
+### `BSTree.tree_predecessor(treeNode)`
+* **treeNode** \<BSTree\>
+* **return** \<TreeNode\>  返回指定节点的直接前驱节点
+
+## **Application**
+
+输入初始化的二叉查找树`json`，如:
+```js
+{
+    "value":9,
+    "left":{
+        "value":3,
+        "left":{
+            "value":1
+        },
+        "right":{
+            "value":6,
+            "left":{
+                "value":4
+            },
+            "right":{
+                "value":8,
+                "left":{
+                    "value":7
+                }
+            }
+        }
+    },
+    "right":{
+        "value":10,
+        "right":{
+            "value":14,
+            "left":{
+                "value":13
+            }
+        }
+    }
+}
+```
+
+<Playground>
+    <BSTree />
+</Playground>

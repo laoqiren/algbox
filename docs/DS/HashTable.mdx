@@ -1,0 +1,49 @@
+---
+name: HashTable
+route: /ds/hashtable
+menu: Data Structure
+order: 4
+---
+
+import { Playground } from 'docz'
+
+# HashTable
+哈希表的实现，采用链表法处理哈希冲突
+
+引入哈希表类
+```js
+const HashTable = require('algbox/lib/DS').HashTable;
+```
+## **构建一个哈希表**
+```js
+const table = new HashTable(tableSize);
+```
+* **tableSize** \[number\] 哈希表的大小，默认为32
+
+## **设置键值**
+
+### `set(key: string, value: any): HashTable`
+设置键值对，目前仅支持字符串键，返回哈希表本身
+```js
+table.set('name','luoxia');
+table.set('year',21);
+```
+
+## **获取键值**
+
+### `get(key: string): any`
+获取指定键的值
+```js
+table.get('name'); // 'luoxia'
+```
+
+## **其他方法**
+
+### `hash(key: string): number`
+计算指定键的`Hash`值
+
+### `has(key: string): boolean`
+判断某个键是否存在
+
+### `getKeys(): string []`
+返回哈希表中所有键

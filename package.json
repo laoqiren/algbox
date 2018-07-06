@@ -7,7 +7,9 @@
     "dev": "tsc -w",
     "build": "gulp copyFiles && tsc",
     "test": "mocha --recursive",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
   },
   "keywords": [
     "algorithms",
@@ -18,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^10.3.4",
+    "docz": "^0.5.3",
     "typescript": "^2.9.2"
   },
   "dependencies": {
@@ -25,9 +28,6 @@
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-typescript": "^5.0.0-alpha.2",
     "mlhelper": "^0.1.10",
     "mocha": "^5.2.0"
   }

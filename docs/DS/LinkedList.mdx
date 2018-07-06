@@ -1,0 +1,88 @@
+---
+name: LinkedList
+route: /ds/linkedlist
+menu: Data Structure
+order: 1
+---
+
+import { Playground } from 'docz'
+
+# LinedList
+双向循环链表的实现
+
+引入链表类
+```js
+const LinkedList = require('algbox/lib/DS').LinkedList;
+```
+## **构建一个双向循环链表**
+```js
+let list = new LinkedList(defaultItems);
+
+// defaultItems:  [] or [1,5,7] or ['hello',1,9,'you'] or undefined
+```
+* **defaultItems** \[Array\<any\>\] 可选，默认的数据数组
+
+## **添加节点**
+
+### `append(value: any): LinkedList`
+向链表尾部添加节点，返回链表本身
+
+### `prepend(value: any): LinkedList`
+向链表头部添加节点，返回链表本身
+
+### `insert(pos: number, value: any): LinkedList`
+向指定位置插入节点，如果`pos`大于链表长度，会插入到链表尾部，如果小于等于0则插入到头部，返回链表本身
+
+## **删除节点**
+### `delete(pos: number): any`
+删除指定位置的节点，返回被删除的节点
+
+### `deleteHead(): any`
+删除头部节点，返回被删除的节点
+
+### `deleteTail(): any`
+删除尾部节点，返回被删除的节点
+
+## **查找节点**
+
+### `find(cb: (nodeValue: any) => boolean): ListNode`
+指定查询回调函数，会接收到遍历到的节点的值
+```js
+const foundNode = list.find(value => value.key === key);
+```
+其中`ListNode`为链表节点结构：
+```js
+ListNode {
+    value: any;
+    next: null | ListNode;
+    prev: null | ListNode;
+}
+```
+## **遍历方法**
+提供两个方向的遍历方法，由于是双向循环列表，所以如果直接通过`for...of`或者解构将会得到无限长度的数组，建议通过`next()`和`prev()`进行遍历。
+
+```js
+const list = new LinkedList([3,6,7,9]);
+
+list.next(); // {value: 3, done: false}
+list.next(); // {value: 6, done: false}
+list.prev(); // {value: 3, done: false}
+```
+
+## **其他方法**
+
+### `link(list: LinkedList): LinkedList`
+
+连接两个链表，返回连接后的链表
+
+### `toArray(fromCurrent: boolean = false): any[]`
+
+链表的数组化，`fromCurrent`表示是否从当前遍历指针开始
+
+```js
+const list = new LinkedList([3,6,7,9]);
+
+list.next(); // {value: 3, done: false}
+console.log(list.toArray(true)); // [6,7,9,3]
+console.log(list.toArray(false)); // [3,6,7,9];
+```

@@ -1,0 +1,31 @@
+---
+name: Stack
+route: /ds/stack
+menu: Data Structure
+order: 2
+---
+
+import { Playground } from 'docz'
+
+# Stack
+栈的实现，基于`LinkedList`类
+
+引入栈类
+```js
+const Stack = require('algbox/lib/DS').Stack;
+```
+## **构建一个栈**
+```js
+const stack = new Stack(defaultItems);
+```
+* **defaultItems** \[Array\<any\>\] 可选，默认的数据数组
+
+## **栈操作方法**
+
+### `push(value: any): Stack` 
+入栈操作
+### `pop(): any`
+出栈操作
+
+### `size(): number`
+返回栈长度

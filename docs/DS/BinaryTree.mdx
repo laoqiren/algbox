@@ -1,0 +1,96 @@
+---
+name: BinaryTree
+route: /ds/binarytree
+menu: Data Structure
+order: 5
+---
+
+import { Playground, PropsTable } from 'docz'
+
+
+# **BinaryTree**
+
+引入二叉树类
+
+```js
+const BinaryTree = require('algbox/lib/DS').BinaryTree;
+```
+## **构建一棵二叉树**
+```js
+const tree = new BinaryTree(treeObj);
+```
+* **treeObj** \[TreeNode | null | undefined\]
+* `TreeNode`:
+```js
+TreeNode {
+    value: any;
+    left?: TreeNode | null;
+    right?: TreeNode | null;
+    parent?: TreeNode | null;
+}
+```
+
+## **遍历方法**
+遍历方法会返回一个`Iterator`，可以通过调用`next()`遍历结果，也可以通过`for...of`循环，也可以用于结构赋值。
+```js
+let result = [...tree.preOrder()]; //前序
+    result = [...tree.middleOrder()]; //中序
+    result = [...tree.postOrder()]; //后序
+    result = [...tree.levelOrder()]; // 层次
+
+let ge = tree.preOrder();
+ge.next(); // { value: xxx, done: false}
+
+for(let value of tree.levelOrder()) {
+    console.log(value);
+}
+
+```
+
+## **树的高度**
+
+### `height(): number`
+计算树的高度
+```js
+const height = tree.height();
+```
+### `leftHeight(): number`
+计算树左边的高度（包括根节点）
+
+### `rightHeight(): number`
+计算树右边的高度（包括根节点）
+
+## **计算节点数目**
+
+### `countNodes(): number`
+计算树的节点总数
+
+### `leftCount(): number`
+计算树左边的节点数目（包括根节点）
+
+### `rightCount(): number`
+计算树右边的节点数目（包括根节点）
+
+## **静态方法**
+
+### `static relation(node1: TreeNode,node2: TreeNode): Relation`
+判断两个节点的相互关系，返回结果为`node1`相对于`node2`的关系。
+```js
+const relation = BinaryTree.relation(node, node.parent);
+```
+* `Relation`为枚举类型:
+```js
+enum Relation {
+    Equal,
+    LeftChild,
+    RightChild,
+    Parent,
+    Nothing
+}
+```
+
+## 其他方法
+
+### `isFull(): boolean`
+判断是否为满二叉树。
+

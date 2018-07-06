@@ -1,0 +1,46 @@
+---
+name: Deque
+route: /ds/deque
+menu: Data Structure
+order: 3
+---
+
+import { Playground } from 'docz'
+
+# Deque
+双向队列的实现，基于`LinkedList`类
+
+引入双向队列类
+```js
+const Deque = require('algbox/lib/DS').Deque;
+```
+## **构建一个双向队列**
+```js
+const queue = new Deque(defaultItems);
+```
+* **defaultItems** \[Array\<any\>\] 可选，默认的数据数组
+
+## **队列操作方法**
+
+### `push_back(value: any): Deque`
+向队尾添加节点
+
+### `push_front(value: any): Deque`
+向队首添加节点
+
+### `pop_back(): any`
+删除队尾节点，返回删除的节点
+
+### `pop_front(): any`
+删除队首节点，返回删除的节点
+
+## **队列信息**
+
+### `size(): number`
+返回队列长度
+
+### `front(): any`
+返回队首元素
+
+### `back(): any`
+返回队尾元素
