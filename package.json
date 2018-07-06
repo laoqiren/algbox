@@ -28,7 +28,7 @@
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "gulp": "^3.9.1",
-    "mlhelper": "^0.1.10",
+    "mlhelper": "^0.2.0",
     "mocha": "^5.2.0"
   }
 }
