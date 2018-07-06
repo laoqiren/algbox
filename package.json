@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc -w",
-    "build": "gulp copyFiles && tsc",
+    "build": "gulp copyFiles && tsc && docz:build",
     "test": "mocha --recursive",
     "postversion": "git push && git push --tags",
     "docz:dev": "docz dev",
