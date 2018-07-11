@@ -1,0 +1,97 @@
+---
+name: BubbleSort
+route: /alg/bubblesort
+menu: Algorithm
+order: 200
+---
+
+import { Playground } from 'docz'
+
+# BubbleSort
+冒泡排序的实现。
+
+引入冒泡排序类
+```js
+const BubbleSort = require('algbox/lib/ALG/Sort').BubbleSort;
+```
+## **构建一个冒泡排序实例**
+```js
+const arr = new BubbleSort(sourceArr, desc);
+```
+* **sourceArr** \<any[]\> 用于排序的数组，元素可以是任意类型
+* **desc** \[boolean\] 是否降序，默认为`false`
+
+```js
+const arr = new BubbleSort([1,8,0,2,6,7,3,6], true);
+```
+
+## **排序**
+
+### `sort(cb?: (a: T, b: T) => boolean): T[]`
+排序方法，可以传递比较回调函数
+```js
+const arr1 = new BubbleSort([1,8,0,2,6,7,3,6], true);
+
+const result = arr1.sort();
+console.log(result);
+
+const arr2 = new BubbleSort([
+    {
+        name: 'luoxia',
+        year: 21,
+        score: 99
+    },{
+        name: 'jack',
+        year: 23,
+        score: 91
+    },{
+        name: 'Maria',
+        year: 20,
+        score: 99
+    },{
+        name: 'Nike',
+        year: 22,
+        score: 100
+    },{
+        name: 'Mike',
+        year: 22,
+        score: 99
+    }
+]);
+
+const r1 = arr2.sort((a, b) => {
+    return a.score < b.score;
+})
+console.log(r1);
+```
+
+### `sortBy(keys: string[]): T[]`
+指定参与比较的键数组，如果第一个键值相等，比较第二个...，适用于比较对象为`object`时，排序顺序受构造函数第二个参数值的影响
+```js
+const arr2 = new BubbleSort([
+    {
+        name: 'luoxia',
+        year: 21,
+        score: 99
+    },{
+        name: 'jack',
+        year: 23,
+        score: 91
+    },{
+        name: 'Maria',
+        year: 20,
+        score: 99
+    },{
+        name: 'Nike',
+        year: 22,
+        score: 100
+    },{
+        name: 'Mike',
+        year: 22,
+        score: 99
+    }
+]);
+
+const r2 = arr2.sortBy(['score','year'])
+console.log(r2);
+```

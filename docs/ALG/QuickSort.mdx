@@ -2,16 +2,53 @@
 name: QuickSort
 route: /alg/quicksort
 menu: Algorithm
-order: 1
+order: 201
 ---
 
-import { Playground, PropsTable } from 'docz'
-
+import { Playground } from 'docz'
 
 # QuickSort
+快速排序的实现，顺序为升序。
 
-测试
+引入快速排序类
+```js
+const QuickSort = require('algbox/lib/ALG/Sort').QuickSort;
+```
+## **构建一个快速排序实例**
+```js
+const arr = new QuickSort(sourceArr);
+```
+* **sourceArr** \<any[]\> 用于排序的数组，元素可以是任意类型
 
-## Basic usage
+```js
+const sourceArr = [6,9,5,8,0,-7,10,9];
+const arr1 = new QuickSort(sourceArr);
+```
 
-测试
+## **排序**
+
+### `sort(): T[]`
+排序方法，无参数，返回排序后的数组，非原地分区实现方式，需占用额外空间。
+```js
+const sourceArr = [6,9,5,8,0,-7,10,9];
+const arr1 = new QuickSort(sourceArr); // [-7, 0, 5, 6, 8, 9, 9, 10]
+
+console.log(arr1.sort());
+```
+
+### `sortInPlace(): T[]`
+与`sort()`方法效果相同，实现方式为本地(`in place`)分区法，拥有更低的空间复杂度。
+```js
+const arr2 = new QuickSort(sourceArr);
+console.log(arr2.sortInPlace()); // [-7, 0, 5, 6, 8, 9, 9, 10]
+```
+
+## **其他**
+
+### `partitionInPlace(lowIndex: number, highIndex: number): number`
+分区方法，原地分区，返回分区后的中间位置下标值。
+
+```js
+const arr2 = new QuickSort(sourceArr);
+console.log(arr2.partitionInPlace(0, sourceArr.length - 1)); // 3
+```

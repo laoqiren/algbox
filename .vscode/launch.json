@@ -5,7 +5,7 @@
           "name": "launch",
           "type": "node",
           "request": "launch",
-          "program": "${workspaceRoot}/lib/DS/Tree/test/bsTree.test.js",
+          "program": "${workspaceRoot}/lib/ALG/Sort/test/QuickSort.test.js",
           "args": [],
           "cwd": "${workspaceRoot}",
           "protocol": "inspector"

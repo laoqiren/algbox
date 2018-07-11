@@ -21,14 +21,12 @@
   "devDependencies": {
     "@types/node": "^10.3.4",
     "docz": "^0.5.3",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "gulp": "^3.9.1",
+    "mocha": "^5.2.0",
+    "chai": "^4.1.2"
   },
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "chai": "^4.1.2",
-    "gulp": "^3.9.1",
-    "mlhelper": "^0.2.0",
-    "mocha": "^5.2.0"
+    "mlhelper": "^0.2.0"
   }
 }
