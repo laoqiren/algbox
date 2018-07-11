@@ -2,7 +2,7 @@
  * @Author: laoqiren 
  * @Date: 2018-07-09 16:17:53 
  * @Last Modified by: laoqiren
- * @Last Modified time: 2018-07-09 19:07:37
+ * @Last Modified time: 2018-07-11 17:20:19
  */
 
 
@@ -26,7 +26,7 @@ class Maths {
         return b === 0 ? a : Maths.GCD(b, a % b);
     }
     static LCM(num1: number, num2: number): number {
-        return (num1 === 0 || num2 === 0) ? 0 : Maths.GCD(num1, num2);
+        return (num1 === 0 || num2 === 0) ? 0 : Math.abs(num1 * num2) / Maths.GCD(num1, num2);
     }
 }
 

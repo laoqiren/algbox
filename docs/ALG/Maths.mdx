@@ -1,0 +1,45 @@
+---
+name: Maths
+route: /alg/maths
+menu: Algorithm
+order: 199
+---
+
+import { Playground } from 'docz'
+
+# Maths
+数学运算相关算法实现，包含一系列静态方法
+
+引入`Maths`类
+```js
+const Maths = require('algbox/lib/ALG').Maths;
+```
+
+## **静态方法**
+
+### `factorial(num: number, total: number = 1): number`
+求阶乘
+```js
+const fac = Maths.factorial(5);  // 120
+```
+
+### `fibonacci(n: number)`
+求斐波拉契数列前`n`个，返回遍历器对象
+
+```js
+const fib = [...Maths.fibonacci(10)];   // [0, 1, 1, 2, 3, 5, 8, 13, …]
+```
+
+### `GCD(num1: number, num2: number): number`
+欧几里得算法求两个数的最大公约数
+
+```js
+const gcd = Maths.GCD(21,9); // 3
+```
+
+### `LCM(num1: number, num2: number): number`
+求两个数的最小公倍数
+
+```js
+const lcm = Maths.LCM(21,9); //63
+```
