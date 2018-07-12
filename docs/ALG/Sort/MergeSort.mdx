@@ -1,0 +1,38 @@
+---
+name: MergeSort
+route: /alg/mergesort
+menu: Algorithm
+order: 202
+---
+
+import { Playground } from 'docz'
+
+# MergeSort
+归并排序的实现，顺序为升序。
+
+引入归并排序类
+```js
+const MergeSort = require('algbox/lib/ALG/Sort').MergeSort;
+```
+## **构建一个归并排序实例**
+```js
+const arr = new MergeSort(sourceArr);
+```
+* **sourceArr** \<any[]\> 用于排序的数组，元素可以是任意类型
+
+```js
+const sourceArr = [1,8,-5,3,6,2,8,9];
+const arr = new MergeSort(sourceArr);
+```
+
+## **排序**
+
+### `sort(): T[]`
+排序方法，无参数，返回排序后的数组
+```js
+const sourceArr = [1,8,-5,3,6,2,8,9];
+const arr = new MergeSort(sourceArr);
+const result = arr.sort();
+
+console.log(result);
+```

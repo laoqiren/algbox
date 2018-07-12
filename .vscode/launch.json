@@ -5,7 +5,7 @@
           "name": "launch",
           "type": "node",
           "request": "launch",
-          "program": "${workspaceRoot}/lib/ALG/Maths/maths.test.js",
+          "program": "${workspaceRoot}/lib/ALG/Sort/test/InsertSort.test.js",
           "args": [],
           "cwd": "${workspaceRoot}",
           "protocol": "inspector"

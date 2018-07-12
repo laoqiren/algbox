@@ -1,0 +1,32 @@
+---
+name: xxxSort
+route: /alg/xxxsort
+menu: Algorithm
+order: 203
+---
+
+import { Playground } from 'docz'
+
+# MergeSort
+其他排序算法
+
+## InsertSort
+插入排序，升序
+```js
+const InsertSort = require('algbox/lib/ALG/Sort').InsertSort;
+
+const sourceArr = [1,8,-5,3,6,2,8,9];
+const arr = new InsertSort(sourceArr);
+
+const result = arr.sort();
+```
+
+## SelectSort
+选择排序
+```js
+const SelectSort = require('algbox/lib/ALG/Sort').SelectSort;
+const sourceArr = [1,8,-5,3,6,2,8,9];
+const arr = new SelectSort(sourceArr);
+
+const result = arr.sort();
+```

@@ -1,0 +1,47 @@
+---
+name: kNN
+route: /ml/kNN
+menu: Machine Learning
+order: 401
+---
+
+import { Playground } from 'docz'
+
+# kNN
+
+k近邻算法(k-nearest neighbors algorithm)
+
+wiki: [https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
+
+### `constructor(dataSet: Array<Array<number>>,labels: Array<any>)`
+
+*dataSet:* The two dimensional array of data sets with known classifications.
+
+*labels:* Classification vector of dataset.
+
+### `classify(inx: Array<number>,k: number): any`
+Classification based on feature vectors.
+
+*inx:* data for testing.
+
+*k:*  Make decisions based on K nearest neighbors.
+
+```js
+const kNN = require('mlhelper').algorithm.kNN;
+
+let knn = new kNN([
+    [1.,1.1],
+    [1.,1.],
+    [0.,0.],
+    [0.,0.1]
+],['A','A','B','C']);
+
+let result = knn.classify([1.1,0.8],4);
+
+console.log(result) // 'A'
+```
+### `autoNormalVector(inx: Array<number>): Array<number>`
+Normalize the test data vectors so that each feature is concentrated between 0 and 1.
+
+### `static autoNormal(dataSet: Array<Array<number>>): Array<Array<number>>`
+Normalize the dataset matrix so that each feature is concentrated between 0 and 1.

@@ -1,0 +1,31 @@
+---
+name: Logistic regression
+route: /ml/logistic
+menu: Machine Learning
+order: 403
+---
+
+import { Playground } from 'docz'
+
+# Logistic regression
+wiki: [https://en.wikipedia.org/wiki/Logistic_regression](https://en.wikipedia.org/wiki/Logistic_regression)
+
+### `constructor(dataMatIn: Array<Array<number>>,classLabels: Array<number>,numIter: number)`
+*dataMatIn* like dataset for training.
+
+*classLabels:* the classes of training datas.
+
+*numIter:* Maximum iterations
+
+### `classify(inX: Array<number>): number`
+Claasify the test data.
+
+### `getWeights(): Array<number>`
+ Random gradient ascent method for optimal regression coefficients of each feature.
+
+```js
+let logi = new Logistic(dataSet,labels,150);
+let result = logi.classify(dataSet[i]);
+let weights = logi.getWeights();
+console.log(weights); //[ 2.9301940437635965, -5.7803993740016555, 9.834929045066424 ]
+```
